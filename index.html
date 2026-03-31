@@ -2,54 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Spawn Route Guide</title>
+    <title>Broken Castle Nightmare Survival</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>Wild West Spawn Route Guide</h1>
+    <h1>Broken Castle Nightmare Survival</h1>
 </header>
 
-<!-- ROLE SELECTION TILES -->
-<div class="role-container" id="roleContainer">
-    <div class="role-tile" data-role="g1_archer">Group 1 – Archer 🏹</div>
-    <div class="role-tile" data-role="g1_non">Group 1 – Non‑Archer 🗡️</div>
-    <div class="role-tile" data-role="g2_archer">Group 2 – Archer 🏹</div>
-    <div class="role-tile" data-role="g2_non">Group 2 – Non‑Archer 🗡️</div>
+<div class="role-container">
+    <a class="role-tile" href="stage1.html?role=g1_archer">Group 1 – Archer 🏹</a>
+    <a class="role-tile" href="stage1.html?role=g1_non">Group 1 – Non‑Archer 🗡️</a>
+    <a class="role-tile" href="stage1.html?role=g2_archer">Group 2 – Archer 🏹</a>
+    <a class="role-tile" href="stage1.html?role=g2_non">Group 2 – Non‑Archer 🗡️</a>
 </div>
 
-<!-- WAVES SHOWN AFTER ROLE SELECT -->
-<div class="wave-container hidden" id="waveContainer"></div>
-
-<!-- MAP -->
-<div class="map">
-
-    <div class="zone" id="foundry">
-        <h2>Foundry</h2>
-        <div class="spot" id="foundry_left">Left</div>
-        <div class="spot" id="foundry_mid">Middle</div>
-        <div class="spot" id="foundry_right">Right</div>
-    </div>
-
-    <div class="zone" id="keep">
-        <h2>Keep</h2>
-        <div class="spot" id="keep_left">Left</div>
-        <div class="spot" id="keep_mid">Middle</div>
-        <div class="spot" id="keep_right">Right</div>
-    </div>
-
-    <div class="zone" id="garden">
-        <h2>Burnt Garden</h2>
-        <div class="spot" id="garden_left">Left</div>
-        <div class="spot" id="garden_mid">Middle</div>
-        <div class="spot" id="garden_right">Right</div>
-    </div>
-
-</div>
-
-<div id="resultPanel"></div>
-
-<script src="logic.js"></script>
 </body>
 </html>
