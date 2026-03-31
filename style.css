@@ -97,3 +97,21 @@ header {
 .next-btn:hover {
     background: #8f5a22;
 }
+
+.home-btn {
+    display: block;
+    width: 220px;
+    margin: 20px auto 40px auto;
+    padding: 14px;
+    background: #7a4a18;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-btn:hover {
+    background: #5f3712;
+}
