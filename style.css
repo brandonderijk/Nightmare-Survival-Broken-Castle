@@ -13,6 +13,7 @@ header {
     font-size: 32px;
 }
 
+/* ROLE TILES */
 .role-container {
     width: 80%;
     margin: 20px auto;
@@ -35,6 +36,7 @@ header {
     background: #ffedcc;
 }
 
+/* WAVE TILES */
 .wave-container {
     width: 80%;
     margin: 20px auto;
@@ -60,6 +62,7 @@ header {
     background: #ffe1b8;
 }
 
+/* MAP */
 .map {
     display: flex;
     justify-content: space-around;
@@ -95,6 +98,7 @@ header {
     box-shadow: 0 0 15px #ffb300;
 }
 
+/* RESULT PANEL */
 #resultPanel {
     width: 80%;
     margin: 20px auto;
