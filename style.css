@@ -98,6 +98,23 @@ header {
     background: #8f5a22;
 }
 
+.prev-btn {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 15px;
+    background: #a86c2c;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.prev-btn:hover {
+    background: #8f5a22;
+}
+
 .home-btn {
     display: block;
     width: 220px;
