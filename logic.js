@@ -1,10 +1,10 @@
-// Bow vs Sword icons
+// Icons
 const ICONS = {
     archer: "🏹",
     non: "🗡️"
 };
 
-// SPAWN DATA — underscores removed & names cleaned
+// Stage + wave spawn lists (underscores removed)
 const STAGES = {
     1: {
         1: ["Foundry Right", "Keep Middle", "Burnt Garden Left"],
@@ -28,72 +28,55 @@ const STAGES = {
     }
 };
 
-// Read role + stage
-const urlParams = new URLSearchParams(window.location.search);
-const ROLE = urlParams.get("role");
+// Get URL role parameter
+const params = new URLSearchParams(window.location.search);
+const ROLE = params.get("role");
 
+// Determine stage number from filename
 const page = window.location.pathname;
 const STAGE = parseInt(page.match(/stage(\d)/)[1]);
 
-// Create wave buttons
+// Insert Wave Buttons
 const waveContainer = document.getElementById("waveContainer");
 if (waveContainer) {
     for (let w = 1; w <= 3; w++) {
-        let tile = document.createElement("div");
-        tile.classList.add("wave-tile");
-        tile.innerText = `Wave ${w}`;
-        tile.addEventListener("click", () => showSpawn(ROLE, STAGE, w));
-        waveContainer.appendChild(tile);
+        let btn = document.createElement("div");
+        btn.classList.add("wave-tile");
+        btn.innerText = `Wave ${w}`;
+        btn.addEventListener("click", () => showWave(ROLE, STAGE, w));
+        waveContainer.appendChild(btn);
     }
 }
 
-// Role logic
-function showSpawn(role, stage, wave) {
+// Show wave clean tile view
+function showWave(role, stage, wave) {
+    const output = document.getElementById("waveOutput");
+    output.innerHTML = "";
 
-    document.querySelectorAll(".spot").forEach(s => s.classList.remove("highlight"));
-
-    let list = STAGES[stage][wave];
+    const list = STAGES[stage][wave];
 
     const isG1 = role.includes("g1");
     const isG2 = role.includes("g2");
     const icon = role.includes("archer") ? ICONS.archer : ICONS.non;
 
-    let output;
+    let first, second;
 
     if (stage === 4) {
-        if (isG1) output = `${icon} ${list[0]} → then ${list[2]}`;
-        if (isG2) output = `${icon} ${list[1]} → then ${list[3]}`;
+        if (isG1) { first = list[0]; second = list[2]; }
+        if (isG2) { first = list[1]; second = list[3]; }
     } else {
-        if (isG1) output = `${icon} ${list[0]} → then ${list[2]}`;
-        if (isG2) output = `${icon} ${list[1]} (optional assist: ${list[2]})`;
+        if (isG1) { first = list[0]; second = list[2]; }
+        if (isG2) { first = list[1]; second = list[2]; }
     }
 
-    highlightSpot(output);
-    document.getElementById("resultPanel").innerText = output;
+    output.innerHTML = `
+        <div class="path-tile">${icon} ${first}</div>
+        <div class="arrow">↓</div>
+        <div class="path-tile">${second}</div>
+    `;
 }
 
-function highlightSpot(text) {
-    const first = text.split("→")[0].trim(); 
-    const name = first.split(" ").slice(1).join(" "); 
-    const id = name.toLowerCase().replace(/ /g, "_"); 
-
-    const mapIDs = {
-        foundry_left: "foundry_left",
-        foundry_middle: "foundry_mid",
-        foundry_right: "foundry_right",
-        keep_left: "keep_left",
-        keep_middle: "keep_mid",
-        keep_right: "keep_right",
-        burnt_garden_left: "garden_left",
-        burnt_garden_middle: "garden_mid",
-        burnt_garden_right: "garden_right"
-    };
-
-    const finalID = mapIDs[id];
-    if (finalID) document.getElementById(finalID).classList.add("highlight");
-}
-
-// NEXT STAGE BUTTON
+// NEXT BUTTON
 const nextStage = document.getElementById("nextStage");
 if (nextStage) {
     let next = STAGE + 1;
