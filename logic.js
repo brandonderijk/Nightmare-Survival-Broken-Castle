@@ -4,7 +4,7 @@ const ICONS = {
     non: "🗡️"
 };
 
-// Stage + wave spawn lists (underscores removed)
+// Stage spawn definitions (clean names)
 const STAGES = {
     1: {
         1: ["Foundry Right", "Keep Middle", "Burnt Garden Left"],
@@ -28,15 +28,15 @@ const STAGES = {
     }
 };
 
-// Get URL role parameter
+// Read role
 const params = new URLSearchParams(window.location.search);
 const ROLE = params.get("role");
 
-// Determine stage number from filename
+// Determine current stage from URL
 const page = window.location.pathname;
 const STAGE = parseInt(page.match(/stage(\d)/)[1]);
 
-// Insert Wave Buttons
+// Create wave buttons
 const waveContainer = document.getElementById("waveContainer");
 if (waveContainer) {
     for (let w = 1; w <= 3; w++) {
@@ -48,13 +48,12 @@ if (waveContainer) {
     }
 }
 
-// Show wave clean tile view
+// Show the tile → arrow → tile layout
 function showWave(role, stage, wave) {
     const output = document.getElementById("waveOutput");
     output.innerHTML = "";
 
     const list = STAGES[stage][wave];
-
     const isG1 = role.includes("g1");
     const isG2 = role.includes("g2");
     const icon = role.includes("archer") ? ICONS.archer : ICONS.non;
@@ -76,7 +75,7 @@ function showWave(role, stage, wave) {
     `;
 }
 
-// NEXT BUTTON
+// Next stage button
 const nextStage = document.getElementById("nextStage");
 if (nextStage) {
     let next = STAGE + 1;
