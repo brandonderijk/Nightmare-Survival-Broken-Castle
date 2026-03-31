@@ -4,11 +4,8 @@ const ICONS = {
     non: "🗡️"
 };
 
-// SPAWN DATA (same as before)
+// SPAWN DATA
 const STAGES = {
-    1: {
-        1: ["foundry_right", "keep_mid", "garden_left"],
-    },
     1: {
         1: ["foundry_right", "keep_mid", "garden_left"],
         2: ["garden_right", "keep_mid", "garden_mid"],
@@ -31,7 +28,7 @@ const STAGES = {
     }
 };
 
-// FLATTEN WAVES FOR EACH ROLE
+// GENERATE WAVES FOR ROLE
 function getRoleWaves(role) {
     let arr = [];
     for (let s = 1; s <= 4; s++) {
@@ -42,7 +39,7 @@ function getRoleWaves(role) {
     return arr;
 }
 
-// DETERMINE SPAWN FOR ROLE/STAGE/WAVE
+// GET SPAWN FOR ROLE/STAGE/WAVE
 function getSpawn(role, stage, wave) {
 
     let list = STAGES[stage][wave];
@@ -57,13 +54,13 @@ function getSpawn(role, stage, wave) {
         if (isG2) return icon + " " + list[1] + " → then " + list[3];
     }
 
-    // Normal
+    // Normal (Stages 1–3)
     if (isG1) return icon + " " + list[0] + " → then " + list[2];
     if (isG2) return icon + " " + list[1] + " (optional assist on " + list[2] + ")";
 }
 
 
-// --- UI LOGIC ---
+// UI LOGIC
 let selectedRole = null;
 
 document.querySelectorAll(".role-tile").forEach(tile => {
