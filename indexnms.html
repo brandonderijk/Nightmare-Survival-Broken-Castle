@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spawn Route Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Wild West Spawn Route Guide</h1>
+</header>
+
+<div class="panel">
+
+    <!-- ROLE SELECTION -->
+    <label>Select Role:</label>
+    <select id="roleSelect">
+        <option value="">-- choose role --</option>
+        <option value="g1_archer">Group 1 – Archer</option>
+        <option value="g1_non">Group 1 – Non-Archer</option>
+        <option value="g2_archer">Group 2 – Archer</option>
+        <option value="g2_non">Group 2 – Non-Archer</option>
+    </select>
+
+    <!-- STAGE SELECTION -->
+    <label>Select Stage:</label>
+    <select id="stageSelect">
+        <option value="">-- choose stage --</option>
+        <option value="1">Stage 1</option>
+        <option value="2">Stage 2</option>
+        <option value="3">Stage 3</option>
+        <option value="4">Stage 4</option>
+    </select>
+
+    <!-- WAVE SELECTION -->
+    <label>Select Wave:</label>
+    <select id="waveSelect">
+        <option value="">-- choose wave --</option>
+        <option value="1">Wave 1</option>
+        <option value="2">Wave 2</option>
+        <option value="3">Wave 3</option>
+    </select>
+
+    <button id="showBtn">Show Spawn</button>
+</div>
+
+<!-- MAP LAYOUT -->
+<div class="map">
+
+    <div class="zone" id="foundry">
+        <h2>Foundry</h2>
+        <div class="spot" id="foundry_left">Left</div>
+        <div class="spot" id="foundry_mid">Middle</div>
+        <div class="spot" id="foundry_right">Right</div>
+    </div>
+
+    <div class="zone" id="keep">
+        <h2>Keep</h2>
+        <div class="spot" id="keep_left">Left</div>
+        <div class="spot" id="keep_mid">Middle</div>
+        <div class="spot" id="keep_right">Right</div>
+    </div>
+
+    <div class="zone" id="garden">
+        <h2>Burnt Garden</h2>
+        <div class="spot" id="garden_left">Left</div>
+        <div class="spot" id="garden_mid">Middle</div>
+        <div class="spot" id="garden_right">Right</div>
+    </div>
+
+</div>
+
+<!-- RESULT OUTPUT -->
+<div id="resultPanel"></div>
+
+<script src="logic.js"></script>
+</body>
+</html>
