@@ -101,7 +101,7 @@ header {
 .prev-btn {
     display: block;
     width: 200px;
-    margin: 10px auto;
+    margin: 10px auto 0 auto; /* Stacks nicely under Next Stage */
     padding: 15px;
     background: #a86c2c;
     color: white;
