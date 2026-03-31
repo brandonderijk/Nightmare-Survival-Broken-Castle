@@ -1,63 +1,134 @@
-/* ----------------------------------------------- */
-/* MOBILE OPTIMIZATION — MAKE EVERYTHING LARGER    */
-/* ----------------------------------------------- */
+body {
+    background: #d2b48c;
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #3b2508;
+}
 
-@media (max-width: 700px) {
+header {
+    background: #7a4a18;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+}
 
-    header h1 {
-        font-size: 8vw; /* Scales with screen width */
-        padding: 25px 10px;
-        line-height: 1.2;
-    }
+.role-container {
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
 
-    /* Role tiles on home page */
-    .role-container {
-        width: 95%;
-        grid-template-columns: 1fr; /* stack vertically */
-        gap: 20px;
-    }
+.role-tile {
+    padding: 20px;
+    background: #f8e4c6;
+    border: 5px solid #7a4a18;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
 
-    .role-tile {
-        font-size: 6vw;
-        padding: 20px;
-    }
+.role-tile:hover {
+    background: #ffedcc;
+}
 
-    /* Wave tiles */
-    .wave-container {
-        flex-direction: column;
-        width: 95%;
-    }
+.wave-container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+}
 
-    .wave-tile {
-        font-size: 6vw;
-        padding: 20px;
-        border-width: 5px;
-        margin-bottom: 10px;
-    }
+.wave-tile {
+    flex: 1;
+    padding: 15px;
+    background: #fff2d9;
+    border: 4px solid #7a4a18;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
 
-    /* Path tiles (Foundry Right → Burnt Garden Left) */
-    .path-tile {
-        width: 90%;
-        font-size: 7vw;
-        padding: 22px;
-        border-width: 6px;
-        border-radius: 14px;
-        margin: 20px auto;
-    }
+.wave-tile:hover {
+    background: #ffe1b8;
+}
 
-    .arrow {
-        font-size: 12vw; /* large arrow */
-        margin: 15px 0;
-    }
+.wave-output {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
 
-    /* Next Stage & Previous Page buttons */
-    .next-btn,
-    .prev-btn,
-    .home-btn {
-        width: 70%;
-        padding: 20px;
-        font-size: 6vw;
-        border-radius: 14px;
-        margin-top: 25px;
-    }
+.path-tile {
+    background: #f8e4c6;
+    border: 5px solid #7a4a18;
+    padding: 20px;
+    font-size: 26px;
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.arrow {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.next-btn {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    padding: 15px;
+    background: #a86c2c;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.next-btn:hover {
+    background: #8f5a22;
+}
+
+.prev-btn {
+    display: block;
+    width: 200px;
+    margin: 10px auto 0 auto; /* Stacks nicely under Next Stage */
+    padding: 15px;
+    background: #a86c2c;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.prev-btn:hover {
+    background: #8f5a22;
+}
+
+.home-btn {
+    display: block;
+    width: 220px;
+    margin: 20px auto 40px auto;
+    padding: 14px;
+    background: #7a4a18;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-btn:hover {
+    background: #5f3712;
 }
