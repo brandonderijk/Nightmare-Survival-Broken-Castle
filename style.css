@@ -13,8 +13,6 @@ header {
     font-size: 32px;
 }
 
-/* ROLE TILES */
-
 .role-container {
     width: 80%;
     margin: 20px auto;
@@ -40,8 +38,6 @@ header {
     background: #ffedcc;
 }
 
-/* WAVES */
-
 .wave-container {
     width: 80%;
     margin: 20px auto;
@@ -64,8 +60,6 @@ header {
     background: #ffe1b8;
 }
 
-/* WAVE OUTPUT (tiles only) */
-
 .wave-output {
     width: 80%;
     margin: 30px auto;
@@ -86,8 +80,6 @@ header {
     font-size: 40px;
     margin: 10px 0;
 }
-
-/* NEXT BUTTON */
 
 .next-btn {
     display: block;
