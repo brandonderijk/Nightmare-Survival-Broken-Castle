@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Overview – Broken Castle Nightmare Survival</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+    <h1>Full Overview</h1>
+</header>
+
+<!-- ROLE SWITCH BAR -->
+<div class="role-switch">
+    <a class="role-btn" href="stage1.html?role=g1_archer">Group 1 – Archer 🏹</a>
+    <a class="role-btn" href="stage1.html?role=g1_non">Group 1 – Non‑Archer 🗡️</a>
+    <a class="role-btn" href="stage1.html?role=g2_archer">Group 2 – Archer 🏹</a>
+    <a class="role-btn" href="stage1.html?role=g2_non">Group 2 – Non‑Archer 🗡️</a>
+    <a class="role-btn" href="index.html">Home</a>
+</div>
+
+<div class="overview-container" id="overviewOutput"></div>
+
+<script src="logic.js"></script>
+<script>
+    // Generate the overview using the same logic as the stage pages,
+    // but show ALL roles, ALL stages, ALL waves.
+    generateFullOverview();
+</script>
+
+</body>
+</html>
