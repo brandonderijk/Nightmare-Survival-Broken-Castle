@@ -15,7 +15,7 @@
     <h1>Stage 4</h1>
 </header>
 
-<!-- ✅ GLOBAL TOP NAV BAR (H1 STYLE — horizontal role switch) -->
+<!-- ✅ GLOBAL TOP NAV BAR (H1 STYLE — horizontal role-switch buttons) -->
 <div class="top-bar">
     <button class="top-btn" onclick="switchRole('g1_archer')">G1 Archer</button>
     <button class="top-btn" onclick="switchRole('g1_non')">G1 Non-Archer</button>
@@ -24,7 +24,7 @@
     <a class="top-btn" href="overview.html">Overview</a>
 </div>
 
-<!-- ✅ WAVE BUTTON BAR -->
+<!-- ✅ WAVE BUTTON BAR (NMSF-style horizontal layout) -->
 <div class="wave-bar">
     <button class="wave-btn" onclick="showWave(4, 1, currentRole)">Wave 1</button>
     <button class="wave-btn" onclick="showWave(4, 2, currentRole)">Wave 2</button>
@@ -33,6 +33,8 @@
 
 <!-- ✅ TILE → ARROW → TILE OUTPUT -->
 <div id="waveOutput" class="wave-output"></div>
+
+<!-- ✅ NO NEXT STAGE (Stage 4 is the final stage) -->
 
 <!-- ✅ PREVIOUS PAGE BUTTON -->
 <a href="javascript:history.back()" class="prev-btn">← Previous Page</a>
@@ -44,7 +46,6 @@
 <script src="logic.js"></script>
 
 <script>
-    // Initialize Stage 4 (role from ?role= is auto-handled)
     initializeStage(4);
 </script>
 
