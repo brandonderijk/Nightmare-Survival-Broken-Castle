@@ -1,15 +1,7 @@
-/* ------------------------------------------------------- */
-/* ROLE + STAGE SYSTEM                                     */
-/* ------------------------------------------------------- */
-
-/* AVAILABLE ROLES:
-   g1_archer
-   g1_non
-   g2_archer
-   g2_non
-*/
-
-let currentRole = "g1_archer";   // default (this will be overwritten by stage initialize)
+/* ============================================================
+   GLOBAL ROLE / STAGE STATE
+   ============================================================ */
+let currentRole = "g1_archer";
 let currentStage = 1;
 
 /* ICONS */
@@ -18,7 +10,10 @@ const ICONS = {
     non: "🗡️"
 };
 
-/* CLEANED SPAWN TABLE */
+/* ============================================================
+   CLEANED SPAWN TABLE (NO UNDERSCORES)
+   ============================================================ */
+
 const STAGES = {
     1: {
         1: ["Foundry Right", "Keep Middle", "Burnt Garden Left"],
@@ -42,60 +37,41 @@ const STAGES = {
     }
 };
 
-
-/* ------------------------------------------------------- */
-/* MAIN INITIALIZATION FOR EACH STAGE PAGE                */
-/* ------------------------------------------------------- */
+/* ============================================================
+   INITIALIZE A STAGE (called from stageX.html pages)
+   ============================================================ */
 
 function initializeStage(stageNumber) {
     currentStage = stageNumber;
 
+    // Read ?role=... if present
     const params = new URLSearchParams(window.location.search);
-    const roleParam = params.get("role");
+    const r = params.get("role");
+    if (r) currentRole = r;
 
-    if (roleParam) currentRole = roleParam;
-
-    renderWaveButtons(stageNumber);
     updateNextStageButton(stageNumber);
 }
 
-/* ------------------------------------------------------- */
-/* RENDER WAVES FOR A STAGE                                */
-/* ------------------------------------------------------- */
-
-function renderWaveButtons(stage) {
-    const waveContainer = document.getElementById("waveContainer");
-    waveContainer.innerHTML = "";
-
-    for (let w = 1; w <= 3; w++) {
-        const btn = document.createElement("div");
-        btn.classList.add("wave-tile");
-        btn.textContent = `Wave ${w}`;
-        btn.onclick = () => showWave(stage, w, currentRole);
-        waveContainer.appendChild(btn);
-    }
-}
-
-/* ------------------------------------------------------- */
-/* ROLE SWITCHING (INSTANT, NO PAGE RELOAD)                */
-/* ------------------------------------------------------- */
+/* ============================================================
+   ROLE SWITCHING (INSTANT, NO PAGE RELOAD)
+   ============================================================ */
 
 function switchRole(roleName) {
     currentRole = roleName;
 
+    // Update URL visually
     const url = new URL(window.location.href);
     url.searchParams.set("role", roleName);
     window.history.replaceState({}, "", url);
 
-    renderWaveButtons(currentStage);
-
+    // Clear output
     const out = document.getElementById("waveOutput");
-    out.innerHTML = "";
+    if (out) out.innerHTML = "";
 }
 
-/* ------------------------------------------------------- */
-/* SHOW A WAVE (TILE → ARROW → TILE)                       */
-/* ------------------------------------------------------- */
+/* ============================================================
+   SHOW WAVE OUTPUT (Tile → Arrow → Tile)
+   ============================================================ */
 
 function showWave(stage, wave, role) {
     const out = document.getElementById("waveOutput");
@@ -106,17 +82,28 @@ function showWave(stage, wave, role) {
     const isG1 = role.includes("g1");
     const isG2 = role.includes("g2");
     const isArcher = role.includes("archer");
-
     const icon = isArcher ? ICONS.archer : ICONS.non;
 
     let first, second;
 
     if (stage === 4) {
-        if (isG1) { first = list[0]; second = list[2]; }
-        if (isG2) { first = list[1]; second = list[3]; }
+        if (isG1) {
+            first = list[0];
+            second = list[2];
+        }
+        if (isG2) {
+            first = list[1];
+            second = list[3];
+        }
     } else {
-        if (isG1) { first = list[0]; second = list[2]; }
-        if (isG2) { first = list[1]; second = list[2]; }
+        if (isG1) {
+            first = list[0];
+            second = list[2];
+        }
+        if (isG2) {
+            first = list[1];
+            second = list[2];
+        }
     }
 
     out.innerHTML = `
@@ -126,9 +113,9 @@ function showWave(stage, wave, role) {
     `;
 }
 
-/* ------------------------------------------------------- */
-/* NEXT STAGE BUTTON LOGIC                                 */
-/* ------------------------------------------------------- */
+/* ============================================================
+   NEXT STAGE BUTTON HANDLER
+   ============================================================ */
 
 function updateNextStageButton(stage) {
     const nextBtn = document.getElementById("nextStage");
@@ -143,20 +130,22 @@ function updateNextStageButton(stage) {
     nextBtn.href = `stage${next}.html?role=${currentRole}`;
 }
 
-/* ------------------------------------------------------- */
-/* OVERVIEW PAGE GENERATOR                                 */
-/* ------------------------------------------------------- */
+/* ============================================================
+   OVERVIEW PAGE BUILDER
+   ============================================================ */
 
 function generateFullOverview() {
     const root = document.getElementById("overviewOutput");
     if (!root) return;
 
+    root.innerHTML = "";
+
     const roles = ["g1_archer", "g1_non", "g2_archer", "g2_non"];
-    const roleLabels = {
-        g1_archer: "Group 1 – Archer 🏹",
-        g1_non: "Group 1 – Non‑Archer 🗡️",
-        g2_archer: "Group 2 – Archer 🏹",
-        g2_non: "Group 2 – Non‑Archer 🗡️"
+    const labels = {
+        g1_archer: "G1 Archer 🏹",
+        g1_non: "G1 Non-Archer 🗡️",
+        g2_archer: "G2 Archer 🏹",
+        g2_non: "G2 Non-Archer 🗡️"
     };
 
     for (let stage = 1; stage <= 4; stage++) {
@@ -187,16 +176,16 @@ function generateFullOverview() {
                     if (isG2) { first = list[1]; second = list[2]; }
                 }
 
-                const roleBlock = document.createElement("div");
-                roleBlock.classList.add("overview-role-title");
-                roleBlock.textContent = roleLabels[role];
+                const rTitle = document.createElement("div");
+                rTitle.classList.add("overview-role-title");
+                rTitle.textContent = labels[role];
 
-                const path = document.createElement("div");
-                path.classList.add("overview-path");
-                path.innerHTML = `${icon} ${first}<br>↓<br>${icon} ${second}`;
+                const rPath = document.createElement("div");
+                rPath.classList.add("overview-path");
+                rPath.innerHTML = `${icon} ${first}<br>↓<br>${icon} ${second}`;
 
-                waveBox.appendChild(roleBlock);
-                waveBox.appendChild(path);
+                waveBox.appendChild(rTitle);
+                waveBox.appendChild(rPath);
             });
 
             block.appendChild(waveBox);
