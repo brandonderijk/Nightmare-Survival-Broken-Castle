@@ -23,12 +23,12 @@ h1 {
 }
 
 /* ------------------------------------------------------- */
-/* TOP ROLE SWITCH BAR (H1 STYLE — similar to NMSF layout) */
+/* TOP ROLE SWITCH BAR (NMSF layout, brown theme) */
 /* ------------------------------------------------------- */
 
 .top-bar {
     width: 100%;
-    background: #b48b58;      /* warm brown */
+    background: #b48b58; /* warm brown */
     border-bottom: 4px solid #7a4a18;
     padding: 10px 4px;
     display: flex;
@@ -83,7 +83,7 @@ h1 {
 }
 
 /* ------------------------------------------------------- */
-/* OUTPUT:  TILE → ARROW → TILE */
+/* OUTPUT: TILE → ARROW → TILE */
 /* ------------------------------------------------------- */
 
 .wave-output {
@@ -109,7 +109,7 @@ h1 {
 }
 
 /* ------------------------------------------------------- */
-/* NAVIGATION BUTTONS */
+/* NEXT / PREVIOUS / HOME BUTTONS */
 /* ------------------------------------------------------- */
 
 .next-btn,
@@ -134,7 +134,7 @@ h1 {
 }
 
 /* ------------------------------------------------------- */
-/* OVERVIEW PAGE STYLING */
+/* OVERVIEW PAGE (O1 TILE STYLE) */
 /* ------------------------------------------------------- */
 
 .overview-container {
@@ -142,7 +142,7 @@ h1 {
 }
 
 .overview-block {
-    background: #ebd5b5;              /* clear contrast from waves */
+    background: #ebd5b5;
     border: 3px solid #7a4a18;
     margin-bottom: 25px;
     border-radius: 8px;
@@ -156,7 +156,7 @@ h1 {
 }
 
 .overview-wave {
-    background: #fff6e4;              /* lighter tone for clarity */
+    background: #fff6e4;
     border: 2px solid #7a4a18;
     padding: 12px;
     border-radius: 8px;
@@ -183,6 +183,7 @@ h1 {
 /* ------------------------------------------------------- */
 
 @media (max-width: 600px) {
+
     .top-btn,
     .top-bar a {
         font-size: 14px;
@@ -206,7 +207,7 @@ h1 {
     .next-btn,
     .prev-btn,
     .home-btn {
-        width: 70%;
+        width: 75%;
         font-size: 16px;
     }
 }
