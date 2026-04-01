@@ -115,6 +115,7 @@ header {
     background: #8f5a22;
 }
 
+
 .home-btn {
     display: block;
     width: 220px;
@@ -131,4 +132,68 @@ header {
 
 .home-btn:hover {
     background: #5f3712;
+}
+
+/* ----------------------------------------------- */
+/* MOBILE OPTIMIZATION — MAKE EVERYTHING LARGER    */
+/* ----------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 8vw; /* Scales with screen width */
+        padding: 25px 10px;
+        line-height: 1.2;
+    }
+
+    /* Role tiles on home page */
+    .role-container {
+        width: 95%;
+        grid-template-columns: 1fr; /* stack vertically */
+        gap: 20px;
+    }
+
+    .role-tile {
+        font-size: 6vw;
+        padding: 20px;
+    }
+
+    /* Wave tiles */
+    .wave-container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .wave-tile {
+        font-size: 6vw;
+        padding: 20px;
+        border-width: 5px;
+        margin-bottom: 10px;
+    }
+
+    /* Path tiles (Foundry Right → Burnt Garden Left) */
+    .path-tile {
+        width: 90%;
+        font-size: 7vw;
+        padding: 22px;
+        border-width: 6px;
+        border-radius: 14px;
+        margin: 20px auto;
+    }
+
+    .arrow {
+        font-size: 12vw; /* large arrow */
+        margin: 15px 0;
+    }
+
+    /* Next Stage & Previous Page buttons */
+    .next-btn,
+    .prev-btn,
+    .home-btn {
+        width: 70%;
+        padding: 20px;
+        font-size: 6vw;
+        border-radius: 14px;
+        margin-top: 25px;
+    }
 }
