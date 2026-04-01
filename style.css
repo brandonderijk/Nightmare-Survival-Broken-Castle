@@ -1,58 +1,97 @@
+/* ------------------------------------------------------- */
+/* GLOBAL PAGE STYLE */
+/* ------------------------------------------------------- */
+
 body {
-    background: #d2b48c;
+    background: #d2b48c; /* desert */
     margin: 0;
+    padding: 0;
     font-family: 'Trebuchet MS', sans-serif;
     color: #3b2508;
+    -webkit-text-size-adjust: none;
 }
 
 header {
     background: #7a4a18;
-    padding: 20px;
+    color: white;
     text-align: center;
-    color: #fff;
-    font-size: 32px;
-}
-
-.role-container {
-    width: 80%;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.role-tile {
     padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 7vw;
+    line-height: 1.1;
+}
+
+/* ------------------------------------------------------- */
+/* ROLE SWITCH BAR — A1 TYPE 1 (FULL WIDTH BUTTONS) */
+/* ------------------------------------------------------- */
+
+.role-switch {
+    width: 95%;
+    margin: 15px auto 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.role-btn {
+    width: 100%;
+    padding: 18px;
     background: #f8e4c6;
     border: 5px solid #7a4a18;
     border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 20px;
+    font-size: 6vw;
     font-weight: bold;
-    text-decoration: none;
-    color: black;
+    text-align: center;
+    color: #3b2508;
+    cursor: pointer;
 }
 
-.role-tile:hover {
-    background: #ffedcc;
+.role-btn:hover {
+    background: #ffe9c2;
 }
+
+/* Overview button variant (inside <a> tags) */
+.role-switch a {
+    width: 100%;
+    display: block;
+    padding: 18px;
+    background: #e9d8b4;
+    border: 5px solid #7a4a18;
+    border-radius: 12px;
+    font-size: 6vw;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #3b2508;
+}
+
+.role-switch a:hover {
+    background: #ffe6b0;
+}
+
+/* ------------------------------------------------------- */
+/* WAVE BUTTONS */
+/* ------------------------------------------------------- */
 
 .wave-container {
-    width: 80%;
-    margin: 20px auto;
+    width: 95%;
+    margin: 10px auto;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .wave-tile {
-    flex: 1;
-    padding: 15px;
+    padding: 18px;
     background: #fff2d9;
+    text-align: center;
     border: 4px solid #7a4a18;
     border-radius: 12px;
-    text-align: center;
-    font-size: 18px;
+    font-size: 6vw;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -60,140 +99,145 @@ header {
     background: #ffe1b8;
 }
 
+/* ------------------------------------------------------- */
+/* TILE → ARROW → TILE OUTPUT */
+/* ------------------------------------------------------- */
+
 .wave-output {
-    width: 80%;
-    margin: 30px auto;
+    width: 95%;
+    margin: 20px auto;
     text-align: center;
 }
 
 .path-tile {
     background: #f8e4c6;
-    border: 5px solid #7a4a18;
-    padding: 20px;
-    font-size: 26px;
-    margin: 10px auto;
-    border-radius: 10px;
-    width: 60%;
+    border: 6px solid #7a4a18;
+    border-radius: 14px;
+    padding: 22px;
+    font-size: 7vw;
+    width: 85%;
+    margin: 15px auto;
 }
 
 .arrow {
-    font-size: 40px;
+    font-size: 14vw;
     margin: 10px 0;
 }
 
-.next-btn {
-    display: block;
-    width: 200px;
-    margin: 30px auto;
-    padding: 15px;
-    background: #a86c2c;
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 20px;
-    text-decoration: none;
-}
+/* ------------------------------------------------------- */
+/* NAVIGATION BUTTONS */
+/* ------------------------------------------------------- */
 
-.next-btn:hover {
-    background: #8f5a22;
-}
-
-.prev-btn {
-    display: block;
-    width: 200px;
-    margin: 10px auto 0 auto; /* Stacks nicely under Next Stage */
-    padding: 15px;
-    background: #a86c2c;
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.prev-btn:hover {
-    background: #8f5a22;
-}
-
-
+.next-btn,
+.prev-btn,
 .home-btn {
     display: block;
-    width: 220px;
-    margin: 20px auto 40px auto;
-    padding: 14px;
-    background: #7a4a18;
+    width: 75%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #a86c2c;
     color: white;
     text-align: center;
-    border-radius: 10px;
-    font-size: 18px;
-    text-decoration: none;
+    border-radius: 12px;
+    font-size: 6vw;
     font-weight: bold;
+    text-decoration: none;
 }
 
+.next-btn:hover,
+.prev-btn:hover,
 .home-btn:hover {
-    background: #5f3712;
+    background: #8f5a22;
 }
 
-/* ----------------------------------------------- */
-/* MOBILE OPTIMIZATION — MAKE EVERYTHING LARGER    */
-/* ----------------------------------------------- */
+/* ------------------------------------------------------- */
+/* OVERVIEW PAGE */
+/* ------------------------------------------------------- */
 
-@media (max-width: 700px) {
+.overview-container {
+    width: 95%;
+    margin: 20px auto;
+}
 
+.overview-block {
+    background: #f8e4c6;
+    border: 5px solid #7a4a18;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.overview-title {
+    font-size: 7vw;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.overview-wave {
+    margin: 15px 0;
+    padding: 12px;
+    background: #fff5df;
+    border-radius: 10px;
+    border: 3px solid #7a4a18;
+}
+
+.overview-role-title {
+    font-size: 5.5vw;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.overview-path {
+    background: #fff8ec;
+    border: 4px solid #7a4a18;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 5.5vw;
+    margin: 10px 0 20px 0;
+}
+
+/* ------------------------------------------------------- */
+/* LARGE SCREENS (OPTIONAL DESKTOP ENHANCEMENTS) */
+/* ------------------------------------------------------- */
+
+@media (min-width: 900px) {
     header h1 {
-        font-size: 8vw; /* Scales with screen width */
-        padding: 25px 10px;
-        line-height: 1.2;
+        font-size: 3vw;
     }
 
-    /* Role tiles on home page */
-    .role-container {
-        width: 95%;
-        grid-template-columns: 1fr; /* stack vertically */
-        gap: 20px;
-    }
-
-    .role-tile {
-        font-size: 6vw;
-        padding: 20px;
-    }
-
-    /* Wave tiles */
-    .wave-container {
-        flex-direction: column;
-        width: 95%;
+    .role-btn,
+    .role-switch a {
+        font-size: 1.5vw;
+        padding: 15px;
     }
 
     .wave-tile {
-        font-size: 6vw;
-        padding: 20px;
-        border-width: 5px;
-        margin-bottom: 10px;
+        font-size: 1.5vw;
     }
 
-    /* Path tiles (Foundry Right → Burnt Garden Left) */
     .path-tile {
-        width: 90%;
-        font-size: 7vw;
-        padding: 22px;
-        border-width: 6px;
-        border-radius: 14px;
-        margin: 20px auto;
+        font-size: 2vw;
+        width: 50%;
     }
 
     .arrow {
-        font-size: 12vw; /* large arrow */
-        margin: 15px 0;
+        font-size: 4vw;
     }
 
-    /* Next Stage & Previous Page buttons */
     .next-btn,
     .prev-btn,
     .home-btn {
-        width: 70%;
-        padding: 20px;
-        font-size: 6vw;
-        border-radius: 14px;
-        margin-top: 25px;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+
+    .overview-title {
+        font-size: 2.5vw;
+    }
+
+    .overview-role-title,
+    .overview-path {
+        font-size: 1.5vw;
     }
 }
