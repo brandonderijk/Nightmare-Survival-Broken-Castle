@@ -6,7 +6,7 @@
     <title>Stage 1 – Broken Castle Nightmare Survival</title>
 
     <!-- CSS -->
-    style.css
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,13 +15,13 @@
     <h1>Stage 1</h1>
 </header>
 
-<!-- ✅ GLOBAL TOP NAV BAR (H1 STYLE — horizontal role-switch buttons) -->
+<!-- ✅ GLOBAL TOP NAV BAR -->
 <div class="top-bar">
     <button class="top-btn" onclick="switchRole('g1_archer')">G1 Archer</button>
     <button class="top-btn" onclick="switchRole('g1_non')">G1 Non-Archer</button>
     <button class="top-btn" onclick="switchRole('g2_archer')">G2 Archer</button>
     <button class="top-btn" onclick="switchRole('g2_non')">G2 Non-Archer</button>
-    overview.htmlOverview</a>
+    <a class="top-btn" href="overview.html">Overview</a>
 </div>
 
 <!-- ✅ WAVE BUTTON BAR -->
@@ -38,10 +38,10 @@
 <a id="nextStage" class="next-btn">Next Stage →</a>
 
 <!-- ✅ RETURN HOME BUTTON -->
-index.html← Return to Home</a>
+<a href="index.html" class="home-btn">← Return to Home</a>
 
 <!-- ✅ JAVASCRIPT -->
-logic.js</script>
+<script src="logic.js"></script>
 
 <script>
     initializeStage(1);
