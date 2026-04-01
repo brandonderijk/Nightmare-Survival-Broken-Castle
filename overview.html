@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Overview – Broken Castle Nightmare Survival</title>
-    <link rel="stylesheet" href="style.css" />
+    style.css
 </head>
 
 <body>
@@ -13,21 +13,21 @@
     <h1>Full Overview</h1>
 </header>
 
-<!-- ROLE SWITCH BAR -->
-<div class="role-switch">
-    <a class="role-btn" href="stage1.html?role=g1_archer">Group 1 – Archer 🏹</a>
-    <a class="role-btn" href="stage1.html?role=g1_non">Group 1 – Non‑Archer 🗡️</a>
-    <a class="role-btn" href="stage1.html?role=g2_archer">Group 2 – Archer 🏹</a>
-    <a class="role-btn" href="stage1.html?role=g2_non">Group 2 – Non‑Archer 🗡️</a>
-    <a class="role-btn" href="index.html">Home</a>
+<!-- GLOBAL TOP NAV (H1 STYLE) -->
+<div class="top-bar">
+    stage1.html?role=g1_archerG1 Archer</button>
+    stage1.html?role=g1_nonG1 Non-Archer</button>
+    stage1.html?role=g2_archerG2 Archer</button>
+    stage1.html?role=g2_nonG2 Non-Archer</button>
+    <a class="top-btn overview-btn" href="overview.html">Overview</a>
 </div>
 
+<!-- OVERVIEW CONTENT CONTAINER -->
 <div class="overview-container" id="overviewOutput"></div>
 
 <script src="logic.js"></script>
 <script>
-    // Generate the overview using the same logic as the stage pages,
-    // but show ALL roles, ALL stages, ALL waves.
+    // Build the full overview on page load
     generateFullOverview();
 </script>
 
