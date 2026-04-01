@@ -1,142 +1,212 @@
-/* GLOBAL */
+/* ------------------------------------------------------- */
+/* GLOBAL PAGE STYLE */
+/* ------------------------------------------------------- */
+
 body {
     margin: 0;
-    background: #d8c2a1;
+    background: #d8c2a1; /* parchment desert tone */
     font-family: Arial, sans-serif;
     color: #3b2508;
     text-align: center;
 }
 
-/* HEADER */
 header {
-    background: #7a4a18;
+    background: #7a4a18; /* deep wood */
     color: white;
-    padding: 12px;
-    font-size: 22px;
+    padding: 15px 0;
+    font-size: 24px;
+    border-bottom: 4px solid #5d3610;
 }
 
-/* TOP-BAR (roles + overview) */
+h1 {
+    margin: 0;
+}
+
+/* ------------------------------------------------------- */
+/* TOP ROLE SWITCH BAR (H1 STYLE — similar to NMSF layout) */
+/* ------------------------------------------------------- */
+
 .top-bar {
     width: 100%;
-    background: #b48b58;
+    background: #b48b58;      /* warm brown */
     border-bottom: 4px solid #7a4a18;
-    padding: 10px;
+    padding: 10px 4px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 8px;
 }
-.top-btn {
+
+.top-btn,
+.top-bar a {
     background: #e2c8a0;
     border: 2px solid #7a4a18;
-    padding: 8px 10px;
-    font-size: 14px;
+    padding: 8px 12px;
+    font-size: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: #3b2508;
+}
+
+.top-btn:hover,
+.top-bar a:hover {
+    background: #f2dfbd;
+}
+
+/* ------------------------------------------------------- */
+/* WAVE BUTTON BAR */
+/* ------------------------------------------------------- */
+
+.wave-bar {
+    background: #f0dfc4;
+    border-bottom: 3px solid #7a4a18;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.wave-btn {
+    background: #e2c8a0;
+    border: 2px solid #7a4a18;
+    padding: 10px 16px;
+    font-size: 16px;
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
 }
-.top-btn:hover {
-    background: #f3dcb3;
-}
 
-/* WAVE BAR */
-.wave-bar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background: #f3e3c8;
-    padding: 10px;
-    border-bottom: 3px solid #7a4a18;
-}
-.wave-btn {
-    background: #e2c8a0;
-    border: 2px solid #7a4a18;
-    padding: 8px 14px;
-    font-size: 15px;
-    border-radius: 6px;
-}
 .wave-btn:hover {
-    background: #f7e5c8;
+    background: #f3e2c6;
 }
 
-/* WAVE OUTPUT */
+/* ------------------------------------------------------- */
+/* OUTPUT:  TILE → ARROW → TILE */
+/* ------------------------------------------------------- */
+
 .wave-output {
-    padding-top: 20px;
+    margin-top: 25px;
+    padding-bottom: 20px;
 }
+
 .path-tile {
     background: #fff6e4;
     border: 3px solid #7a4a18;
-    margin: 10px auto;
     width: 70%;
+    max-width: 400px;
+    margin: 12px auto;
     padding: 16px;
-    font-size: 20px;
     border-radius: 8px;
-}
-.arrow {
-    font-size: 42px;
-    margin: 12px 0;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-/* NAV BUTTONS */
-.next-btn, .prev-btn, .home-btn {
+.arrow {
+    font-size: 40px;
+    margin: 8px 0;
+}
+
+/* ------------------------------------------------------- */
+/* NAVIGATION BUTTONS */
+/* ------------------------------------------------------- */
+
+.next-btn,
+.prev-btn,
+.home-btn {
     display: block;
-    margin: 16px auto;
-    width: 200px;
-    padding: 12px;
-    border-radius: 8px;
+    width: 230px;
+    margin: 18px auto;
+    padding: 12px 0;
     background: #a86c2c;
+    border-radius: 8px;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 17px;
 }
+
 .next-btn:hover,
 .prev-btn:hover,
 .home-btn:hover {
     background: #8f5a22;
 }
 
-/* OVERVIEW PAGE */
+/* ------------------------------------------------------- */
+/* OVERVIEW PAGE STYLING */
+/* ------------------------------------------------------- */
+
 .overview-container {
-    padding: 12px;
+    padding: 15px;
 }
+
 .overview-block {
-    background: #ebd5b5;
+    background: #ebd5b5;              /* clear contrast from waves */
     border: 3px solid #7a4a18;
     margin-bottom: 25px;
     border-radius: 8px;
-    padding: 12px;
+    padding: 15px;
 }
+
 .overview-title {
     font-size: 23px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
+
 .overview-wave {
-    background: #fff6e4;
+    background: #fff6e4;              /* lighter tone for clarity */
     border: 2px solid #7a4a18;
-    padding: 8px;
-    border-radius: 6px;
-    margin: 12px 0;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 14px 0;
 }
+
 .overview-role-title {
     font-weight: bold;
     margin-top: 8px;
+    font-size: 16px;
 }
+
 .overview-path {
     background: #f7ead1;
     border: 2px solid #7a4a18;
-    padding: 8px;
+    padding: 10px;
     border-radius: 6px;
-    margin: 5px 0 12px;
+    margin: 6px 0 14px 0;
+    font-size: 16px;
 }
 
-/* MOBILE */
+/* ------------------------------------------------------- */
+/* MOBILE OPTIMIZATION */
+/* ------------------------------------------------------- */
+
 @media (max-width: 600px) {
-    .top-btn, .wave-btn {
-        font-size: 13px;
-        padding: 6px 10px;
+    .top-btn,
+    .top-bar a {
+        font-size: 14px;
+        padding: 7px 10px;
     }
+
+    .wave-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
     .path-tile {
         width: 90%;
         font-size: 18px;
+    }
+
+    .arrow {
+        font-size: 34px;
+    }
+
+    .next-btn,
+    .prev-btn,
+    .home-btn {
+        width: 70%;
+        font-size: 16px;
     }
 }
