@@ -24,7 +24,7 @@
     <a class="top-btn" href="overview.html">Overview</a>
 </div>
 
-<!-- ✅ WAVE BUTTON BAR (NMSF-style horizontal layout) -->
+<!-- ✅ WAVE BUTTON BAR -->
 <div class="wave-bar">
     <button class="wave-btn" onclick="showWave(4, 1, currentRole)">Wave 1</button>
     <button class="wave-btn" onclick="showWave(4, 2, currentRole)">Wave 2</button>
@@ -33,8 +33,6 @@
 
 <!-- ✅ TILE → ARROW → TILE OUTPUT -->
 <div id="waveOutput" class="wave-output"></div>
-
-<!-- ✅ NO NEXT STAGE (Stage 4 is the final stage) -->
 
 <!-- ✅ PREVIOUS PAGE BUTTON -->
 <a href="javascript:history.back()" class="prev-btn">← Previous Page</a>
@@ -46,6 +44,7 @@
 <script src="logic.js"></script>
 
 <script>
+    // Initialize Stage 4 (uses ?role= if present)
     initializeStage(4);
 </script>
 
