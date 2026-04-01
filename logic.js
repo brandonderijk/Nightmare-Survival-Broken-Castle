@@ -38,7 +38,7 @@ const STAGES = {
 };
 
 /* ============================================================
-   INITIALIZE A STAGE (called from stageX.html pages)
+   INITIALIZE A STAGE
    ============================================================ */
 
 function initializeStage(stageNumber) {
@@ -46,25 +46,25 @@ function initializeStage(stageNumber) {
 
     // Read ?role=... if present
     const params = new URLSearchParams(window.location.search);
-    const r = params.get("role");
-    if (r) currentRole = r;
+    const roleParam = params.get("role");
+    if (roleParam) currentRole = roleParam;
 
     updateNextStageButton(stageNumber);
 }
 
 /* ============================================================
-   ROLE SWITCHING (INSTANT, NO PAGE RELOAD)
+   ROLE SWITCHING
    ============================================================ */
 
 function switchRole(roleName) {
     currentRole = roleName;
 
-    // Update URL visually
+    // Update URL visually (without reload)
     const url = new URL(window.location.href);
     url.searchParams.set("role", roleName);
     window.history.replaceState({}, "", url);
 
-    // Clear output
+    // Clear current wave output
     const out = document.getElementById("waveOutput");
     if (out) out.innerHTML = "";
 }
@@ -90,7 +90,7 @@ function showWave(stage, wave, role) {
         if (isG1) {
             first = list[0];
             second = list[2];
-        } else if (isG2) {
+        } else {
             first = list[1];
             second = list[3];
         }
@@ -98,7 +98,7 @@ function showWave(stage, wave, role) {
         if (isG1) {
             first = list[0];
             second = list[2];
-        } else if (isG2) {
+        } else {
             first = list[1];
             second = list[2];
         }
@@ -112,7 +112,7 @@ function showWave(stage, wave, role) {
 }
 
 /* ============================================================
-   NEXT STAGE BUTTON HANDLER
+   NEXT STAGE BUTTON
    ============================================================ */
 
 function updateNextStageButton(stage) {
@@ -162,16 +162,17 @@ function generateFullOverview() {
                 const isG1 = role.includes("g1");
                 const isG2 = role.includes("g2");
                 const isArcher = role.includes("archer");
+
                 const icon = isArcher ? ICONS.archer : ICONS.non;
 
                 let first, second;
 
                 if (stage === 4) {
-                    if (isG1) { first = list[0]; second = list[2]; }
-                    else if (isG2) { first = list[1]; second = list[3]; }
+                    first = isG1 ? list[0] : list[1];
+                    second = isG1 ? list[2] : list[3];
                 } else {
-                    if (isG1) { first = list[0]; second = list[2]; }
-                    else if (isG2) { first = list[1]; second = list[2]; }
+                    first = isG1 ? list[0] : list[1];
+                    second = isG1 ? list[2] : list[2];
                 }
 
                 const rTitle = document.createElement("div");
