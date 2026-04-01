@@ -90,8 +90,7 @@ function showWave(stage, wave, role) {
         if (isG1) {
             first = list[0];
             second = list[2];
-        }
-        if (isG2) {
+        } else if (isG2) {
             first = list[1];
             second = list[3];
         }
@@ -99,8 +98,7 @@ function showWave(stage, wave, role) {
         if (isG1) {
             first = list[0];
             second = list[2];
-        }
-        if (isG2) {
+        } else if (isG2) {
             first = list[1];
             second = list[2];
         }
@@ -170,10 +168,10 @@ function generateFullOverview() {
 
                 if (stage === 4) {
                     if (isG1) { first = list[0]; second = list[2]; }
-                    if (isG2) { first = list[1]; second = list[3]; }
+                    else if (isG2) { first = list[1]; second = list[3]; }
                 } else {
                     if (isG1) { first = list[0]; second = list[2]; }
-                    if (isG2) { first = list[1]; second = list[2]; }
+                    else if (isG2) { first = list[1]; second = list[2]; }
                 }
 
                 const rTitle = document.createElement("div");
