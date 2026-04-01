@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Stage 1 – Broken Castle Nightmare Survival</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header><h1>Stage 1</h1></header>
+<header>
+    <h1>Stage 1</h1>
+</header>
 
+<!-- ROLE SWITCH BAR — A1-TYPE1 full-width buttons -->
+<div class="role-switch">
+    <button class="role-btn" onclick="switchRole('g1_archer')">Group 1 – Archer 🏹</button>
+    <button class="role-btn" onclick="switchRole('g1_non')">Group 1 – Non‑Archer 🗡️</button>
+    <button class="role-btn" onclick="switchRole('g2_archer')">Group 2 – Archer 🏹</button>
+    <button class="role-btn" onclick="switchRole('g2_non')">Group 2 – Non‑Archer 🗡️</button>
+    <a href="overview.html" class="role-btn overview-btn">📜 Overview</a>
+</div>
+
+<!-- WAVE BUTTONS -->
 <div id="waveContainer" class="wave-container"></div>
 
+<!-- OUTPUT: TILE → ARROW → TILE -->
 <div id="waveOutput" class="wave-output"></div>
 
+<!-- NEXT STAGE BUTTON -->
 <a id="nextStage" class="next-btn">Next Stage →</a>
 
+<!-- RETURN HOME BUTTON -->
 <a href="index.html" class="home-btn">← Return to Home</a>
-    
+
 <script src="logic.js"></script>
+<script>
+    // Load Stage 1 with correct role handling
+    initializeStage(1);
+</script>
+
 </body>
 </html>
