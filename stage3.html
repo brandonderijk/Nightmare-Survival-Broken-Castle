@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Stage 3 – Broken Castle Nightmare Survival</title>
-    style.css
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -13,38 +15,39 @@
     <h1>Stage 3</h1>
 </header>
 
-<!-- GLOBAL TOP NAV BAR (H1 STYLE, horizontal buttons) -->
+<!-- ✅ GLOBAL TOP NAV BAR (H1 STYLE — horizontal role buttons) -->
 <div class="top-bar">
     <button class="top-btn" onclick="switchRole('g1_archer')">G1 Archer</button>
     <button class="top-btn" onclick="switchRole('g1_non')">G1 Non-Archer</button>
     <button class="top-btn" onclick="switchRole('g2_archer')">G2 Archer</button>
     <button class="top-btn" onclick="switchRole('g2_non')">G2 Non-Archer</button>
-
-    overview.htmlOverview</a>
+    <a class="top-btn" href="overview.html">Overview</a>
 </div>
 
-<!-- WAVE BUTTON BAR (horizontal like NMSF) -->
+<!-- ✅ WAVE BUTTON BAR (horizontal) -->
 <div class="wave-bar">
     <button class="wave-btn" onclick="showWave(3, 1, currentRole)">Wave 1</button>
     <button class="wave-btn" onclick="showWave(3, 2, currentRole)">Wave 2</button>
     <button class="wave-btn" onclick="showWave(3, 3, currentRole)">Wave 3</button>
 </div>
 
-<!-- TILE → ARROW → TILE OUTPUT SECTION -->
+<!-- ✅ TILE → ARROW → TILE OUTPUT -->
 <div id="waveOutput" class="wave-output"></div>
 
-<!-- NEXT STAGE BUTTON -->
-stage4.htmlid="nextStage" class="next-btn">Next Stage →</a>
+<!-- ✅ NEXT STAGE BUTTON -->
+<a id="nextStage" class="next-btn">Next Stage →</a>
 
-<!-- PREVIOUS PAGE BUTTON -->
-javascript:history.back() class="prev-btn">← Previous Page</a>
+<!-- ✅ PREVIOUS PAGE BUTTON -->
+<a href="javascript:history.back()" class="prev-btn">← Previous Page</a>
 
-<!-- RETURN HOME BUTTON -->
-index.htmlhome-btn">← Return to Home</a>
+<!-- ✅ RETURN HOME BUTTON -->
+<a href="index.html" class="home-btn">← Return to Home</a>
 
-logic.jsscript>
+<!-- ✅ JAVASCRIPT -->
+<script src="logic.js"></script>
+
 <script>
-    // Initialize Stage 3 and load role from URL (?role=g1_archer etc.)
+    // Initialize Stage 3 and apply role stored in ?role=
     initializeStage(3);
 </script>
 
