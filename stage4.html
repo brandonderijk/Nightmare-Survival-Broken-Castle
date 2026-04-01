@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Stage 4 – Broken Castle Nightmare Survival</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -13,38 +13,27 @@
     <h1>Stage 4</h1>
 </header>
 
-<!-- ROLE SWITCH BAR — A1‑TYPE1 (grote full‑width knoppen) -->
-<div class="role-switch">
+<!-- GLOBAL TOP NAV BAR (H1 STYLE — Horizontal Buttons) -->
+<div class="top-bar">
+    <button class="top-btn" onclick="switchRole('g1_archer')">G1 Archer</button>
+    <button class="top-btn" onclick="switchRole('g1_non')">G1 Non-Archer</button>
+    <button class="top-btn" onclick="switchRole('g2_archer')">G2 Archer</button>
+    <button class="top-btn" onclick="switchRole('g2_non')">G2 Non-Archer</button>
 
-    <button class="role-btn" onclick="switchRole('g1_archer')">
-        Group 1 – Archer 🏹
-    </button>
-
-    <button class="role-btn" onclick="switchRole('g1_non')">
-        Group 1 – Non‑Archer 🗡️
-    </button>
-
-    <button class="role-btn" onclick="switchRole('g2_archer')">
-        Group 2 – Archer 🏹
-    </button>
-
-    <button class="role-btn" onclick="switchRole('g2_non')">
-        Group 2 – Non‑Archer 🗡️
-    </button>
-
-    <a href="overview.html" class="role-btn">
-        📜 Overview
-    </a>
-
+    <a class="top-btn overview-btn" href="overview.html">Overview</a>
 </div>
 
-<!-- WAVE SELECTION BUTTONS -->
-<div id="waveContainer" class="wave-container"></div>
+<!-- WAVE BUTTON BAR -->
+<div class="wave-bar">
+    <button class="wave-btn" onclick="showWave(4, 1, currentRole)">Wave 1</button>
+    <button class="wave-btn" onclick="showWave(4, 2, currentRole)">Wave 2</button>
+    <button class="wave-btn" onclick="showWave(4, 3, currentRole)">Wave 3</button>
+</div>
 
-<!-- TILE → ARROW → TILE RESULT BOX -->
+<!-- OUTPUT -->
 <div id="waveOutput" class="wave-output"></div>
 
-<!-- NO NEXT STAGE (LAST STAGE) -->
+<!-- NO NEXT STAGE (this is the last one) -->
 
 <!-- PREVIOUS PAGE BUTTON -->
 <a href="javascript:history.back()" class="prev-btn">← Previous Page</a>
@@ -52,9 +41,9 @@
 <!-- RETURN HOME BUTTON -->
 <a href="index.html" class="home-btn">← Return to Home</a>
 
+<!-- SCRIPT -->
 <script src="logic.js"></script>
 <script>
-    // Load Stage 4 with correct role handling
     initializeStage(4);
 </script>
 
