@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head Archer</button><head>
+    <button class="top-btn" onclick="switchRole('g2_non')">G2 Non-Archer</button>
+
+    <a class="top-btn overview-btn" href="overview.html">Overview</a>
+</div>
+
+<!-- WAVE BUTTON BAR -->
+<div class="wave-bar">
+    <button class="wave-btn" onclick="showWave(2, 1, currentRole)">Wave 1</button>
+    <button class="wave-btn" onclick="showWave(2, 2, currentRole)">Wave 2</button>
+    <button class="wave-btn" onclick="showWave(2, 3, currentRole)">Wave 3</button>
+</div>
+
+<!-- TILE → ARROW → TILE OUTPUT -->
+<div id="waveOutput" class="wave-output"></div>
+
+<!-- NEXT STAGE -->
+<a id="nextStage" class="next-btn">Next Stage →</a>
+
+<!-- PREVIOUS PAGE -->
+<a href="javascript:history.back()" class="prev-btn">← Previous Page</a>
+
+<!-- RETURN HOME -->
+<a href="index.html" class="home-btn">← Return to Home</a>
+
+<script src="logic.js"></script>
+<script>
+    // Initialize Stage 2 with correct role via URL
+    initializeStage(2);
+</script>
+
+</body>
+</html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Stage 2 – Broken Castle Nightmare Survival</title>
@@ -13,35 +45,7 @@
     <h1>Stage 2</h1>
 </header>
 
-<!-- ROLE SWITCH BAR — A1‑TYPE1 (grote full-width knoppen) -->
-<div class="role-switch">
-    <button class="role-btn" onclick="switchRole('g1_archer')">Group 1 – Archer 🏹</button>
-    <button class="role-btn" onclick="switchRole('g1_non')">Group 1 – Non‑Archer 🗡️</button>
-    <button class="role-btn" onclick="switchRole('g2_archer')">Group 2 – Archer 🏹</button>
-    <button class="role-btn" onclick="switchRole('g2_non')">Group 2 – Non‑Archer 🗡️</button>
-    <a href="overview.html" class="role-btn">📜 Overview</a>
-</div>
-
-<!-- WAVE BUTTONS -->
-<div id="waveContainer" class="wave-container"></div>
-
-<!-- OUTPUT TILE → ARROW → TILE -->
-<div id="waveOutput" class="wave-output"></div>
-
-<!-- NEXT STAGE BUTTON -->
-<a id="nextStage" class="next-btn">Next Stage →</a>
-
-<!-- PREVIOUS PAGE BUTTON -->
-<a href="javascript:history.back()" class="prev-btn">← Previous Page</a>
-
-<!-- RETURN HOME BUTTON -->
-<a href="index.html" class="home-btn">← Return to Home</a>
-
-<script src="logic.js"></script>
-<script>
-    // Load Stage 2 with correct role handling
-    initializeStage(2);
-</script>
-
-</body>
-</html>
+<!-- GLOBAL NAV BAR — H1 (horizontal role switching) -->
+<div class="top-bar">
+    <button class="top-btn" onclick="switchRole('g1_archer')">G1 Archer</button>
+    <button class="top-btn" onclick="switchRole('g1_non')">G1 Non-Archer</button>
